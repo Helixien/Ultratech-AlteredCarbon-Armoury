@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+	<name>Ultratech: Altered Carbon - Armoury</name>
+	<author>Helixien and Luizi</author>
+	<supportedVersions>
+		<li>1.1</li>
+		<li>1.2</li>
+	</supportedVersions>
+	<packageId>Hlx.UltratechAlteredCarbonArmoury</packageId>
+	<description/>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=2196278117</url>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/Helixien/RimworldAlteredCarbon</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2196278117</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Hlx.UltratechAlteredCarbon</li>        
+	</loadAfter>
+
+</ModMetaData>

@@ -2,90 +2,6 @@
 <Defs>
 
 	<ThingDef ParentName="BaseGunWithQuality">
-		<defName>AC_Gun_MACRevolver</defName>
-		<label>MAC revolver</label>
-		<description>A high-caliber revolver using experimental charge-technology. It's very powerful, has a decent range but takes long to reload.</description>
-		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/MACRevolver</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<techLevel>Spacer</techLevel>
-		<soundInteract>Interact_Revolver</soundInteract>
-		<thingSetMakerTags>
-			<li>RewardStandardLowFreq</li>
-			<li>RewardStandardQualitySuper</li>
-		</thingSetMakerTags>
-		<statBases>
-			<Mass>1.5</Mass>
-			<MarketValue>200</MarketValue>
-			<AccuracyTouch>0.86</AccuracyTouch>
-			<AccuracyShort>0.79</AccuracyShort>
-			<AccuracyMedium>0.40</AccuracyMedium>
-			<AccuracyLong>0.25</AccuracyLong>
-			<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
-		</statBases>
-		<weaponTags>
-			<li>AC_LateIndustrialGun</li>
-			<li>SpacerGun</li>
-		</weaponTags>
-		<costList>
-			<Steel>30</Steel>
-			<ComponentIndustrial>2</ComponentIndustrial>
-		</costList>
-		<verbs>
-			<li>
-				<verbClass>Verb_Shoot</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>AC_Bullet_MACRevolver</defaultProjectile>
-				<warmupTime>0.6</warmupTime>
-				<range>29.9</range>
-				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
-				<burstShotCount>2</burstShotCount>
-				<soundCast>Shot_Revolver</soundCast>
-				<soundCastTail>GunTail_Light</soundCastTail>
-				<muzzleFlashScale>12</muzzleFlashScale>
-			</li>
-		</verbs>
-		<tools>
-			<li>
-				<label>grip</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>9</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-			<li>
-				<label>barrel</label>
-				<capacities>
-					<li>Blunt</li>
-					<li>Poke</li>
-				</capacities>
-				<power>9</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-	</ThingDef>
-
-	<ThingDef ParentName="BaseBullet">
-		<defName>AC_Bullet_MACRevolver</defName>
-		<label>revolver bullet</label>
-		<graphicData>
-			<texPath>Things/Projectile/Charge_Small</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>TransparentPostLight</shaderType>
-			<drawSize>1.15</drawSize>
-		</graphicData>
-		<projectile>
-			<damageDef>Bullet</damageDef>
-			<damageAmountBase>12</damageAmountBase>
-			<armorPenetrationBase>0.20</armorPenetrationBase>
-			<stoppingPower>2</stoppingPower>
-			<speed>70</speed>
-		</projectile>
-	</ThingDef>
-
-	<ThingDef ParentName="BaseGunWithQuality">
 		<defName>AC_Gun_BullpupPistol</defName>
 		<label>bullpup pistol</label>
 		<description>A light, late-industrial bullpup pistol. It has a limited range, but fires rapidly.</description>
@@ -102,6 +18,7 @@
 		<weaponTags>
 			<li>AC_LateIndustrialGun</li>
 			<li>SpacerGun</li>
+			<li>ammo_industrial/25/5</li>
 		</weaponTags>
 		<statBases>
 			<Mass>1.2</Mass>
@@ -180,6 +97,7 @@
 		<weaponTags>
 			<li>AC_LateIndustrialGun</li>
 			<li>SpacerGun</li>
+			<li>ammo_industrial/12/3</li>
 		</weaponTags>
 		<statBases>
 			<Mass>0.9</Mass>
@@ -240,44 +158,53 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseGunWithQuality">
-		<defName>AC_Gun_ShockPDW</defName>
-		<label>shock PDW</label>
-		<description>A light, late-industrial slug-thrower. It has a limited range, but fires rapidly and accurately for its size.</description>
+		<defName>AC_Gun_MACRevolver</defName>
+		<label>gauss revolver</label>
+		<description>A rare spacer-tech gauss revolver. It fires shots in short succession doing highly lethal damage in short range firefights.</description>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/ShockPDW</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/GaussRevolver</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<soundInteract>Interact_SMG</soundInteract>
 		<techLevel>Spacer</techLevel>
+		<soundInteract>VWE_Interact_GaussMagnum</soundInteract>
+		<statBases>
+			<Mass>2.0</Mass>
+			<AccuracyTouch>0.86</AccuracyTouch>
+			<AccuracyShort>0.79</AccuracyShort>
+			<AccuracyMedium>0.40</AccuracyMedium>
+			<AccuracyLong>0.25</AccuracyLong>
+			<RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<Steel>45</Steel>
+			<Uranium>12</Uranium>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
 		<thingSetMakerTags>
 			<li>RewardStandardLowFreq</li>
 			<li>RewardStandardQualitySuper</li>
 		</thingSetMakerTags>
 		<weaponTags>
-			<li>AC_LateIndustrialGun</li>
+			<li>AC_Gun</li>
 			<li>SpacerGun</li>
+			<li>Coilgun</li>
 		</weaponTags>
-		<statBases>
-			<Mass>3.0</Mass>
-			<MarketValue>550</MarketValue>
-			<AccuracyTouch>0.90</AccuracyTouch>
-			<AccuracyShort>0.65</AccuracyShort>
-			<AccuracyMedium>0.50</AccuracyMedium>
-			<AccuracyLong>0.15</AccuracyLong>
-			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
-		</statBases>
+		<generateCommonality>0.1</generateCommonality>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>AC_Bullet_ShockPDW</defaultProjectile>
-				<warmupTime>0.7</warmupTime>
-				<range>21.9</range>
-				<burstShotCount>4</burstShotCount>
-				<ticksBetweenBurstShots>9</ticksBetweenBurstShots>
-				<soundCast>Shot_HeavySMG</soundCast>
-				<soundCastTail>GunTail_Heavy</soundCastTail>
-				<muzzleFlashScale>8</muzzleFlashScale>
+				<defaultProjectile>AC_Bullet_GaussRevolver</defaultProjectile>
+				<warmupTime>0.3</warmupTime>
+				<range>23.9</range>
+				<soundCast>VWE_Shot_GaussMagnum</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetPawns>true</canTargetPawns>
+					<canTargetBuildings>true</canTargetBuildings>
+				</targetParams>
 			</li>
 		</verbs>
 		<tools>
@@ -298,70 +225,231 @@
 				<power>9</power>
 				<cooldownTime>2</cooldownTime>
 			</li>
-			<li>
-				<label>stock</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>9</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
 		</tools>
 	</ThingDef>
 
-	<ThingDef ParentName="BaseBullet">
-		<defName>AC_Bullet_ShockPDW</defName>
-		<label>heavy SMG bullet</label>
-		<graphicData>
-			<texPath>Things/Projectile/Bullet_Small</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>AC_Bullet_GaussRevolver</defName>
+		<label>gauss revolver sabot</label>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>9</damageAmountBase>
-			<speed>65</speed>
-			<armorPenetrationBase>0.15</armorPenetrationBase>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationBase>0.60</armorPenetrationBase>
+			<stoppingPower>1.5</stoppingPower>
+			<speed>150</speed>
 		</projectile>
-	</ThingDef>
+		<thingClass>VFECore.GaussProjectile</thingClass>
+		<graphicData>
+			<texPath>Projectiles/Proj_CoilgunFadeIn</texPath>
+			<texPathFadeOut>Projectiles/Proj_CoilgunFadeOut</texPathFadeOut>
+		</graphicData>
+		<reachMaxRangeAlways>true</reachMaxRangeAlways>
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<minDistanceToAffect>0.9</minDistanceToAffect>
+		<widthScaleFactor>0.15</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0,0,-1)</startingPositionOffset>
+		<totalSizeScale>0.2</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>2</finalTickFrameRate>
+		<tickDamageRate>5</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<stopWhenHit>false</stopWhenHit>
+		<stopWhenHitAt>
+			<li>MineableSteel</li>
+			<li>CollapsedRocks</li>
+			<li>MineableSilver</li>
+			<li>MineableGold</li>
+			<li>MineableUranium</li>
+			<li>MineablePlasteel</li>
+			<li>MineableJade</li>
+			<li>MineableComponentsIndustrial</li>
+			<li>RaisedRocks</li>
+			<li>Sandstone</li>
+			<li>SmoothedSandstone</li>
+			<li>Granite</li>
+			<li>SmoothedGranite</li>
+			<li>Limestone</li>
+			<li>SmoothedLimestone</li>
+			<li>Slate</li>
+			<li>SmoothedSlate</li>
+			<li>Marble</li>
+			<li>SmoothedMarble</li>
+		</stopWhenHitAt>
+	</VFECore.ExpandableProjectileDef>
 
 	<ThingDef ParentName="BaseGunWithQuality">
-		<defName>AC_Gun_MACRifle</defName>
-		<label>MAC rifle</label>
-		<description>A high-caliber assault rifle using experimental charge-technology. It has good range, good power, and good accuracy.</description>
-		<techLevel>Spacer</techLevel>
+		<defName>AC_Gun_ShockPDW</defName>
+		<label>gauss shock PDW</label>
+		<description>A rare spacer-tech gauss smg. It fires up to 4 sabots in a burst and is deadly at short range.</description>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/MACRifle</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/GaussShockPDW</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<soundInteract>VWE_Interact_GaussRifle</soundInteract>
+		<techLevel>Spacer</techLevel>
 		<thingSetMakerTags>
 			<li>RewardStandardLowFreq</li>
 			<li>RewardStandardQualitySuper</li>
 		</thingSetMakerTags>
 		<weaponTags>
-			<li>AC_LateIndustrialGun</li>
+			<li>AC_Gun</li>
 			<li>SpacerGun</li>
+			<li>Coilgun</li>
 		</weaponTags>
 		<statBases>
-			<Mass>3.2</Mass>
-			<MarketValue>890</MarketValue>
-			<AccuracyTouch>0.55</AccuracyTouch>
-			<AccuracyShort>0.68</AccuracyShort>
-			<AccuracyMedium>0.75</AccuracyMedium>
-			<AccuracyLong>0.68</AccuracyLong>
-			<RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
+			<Mass>3.5</Mass>
+			<AccuracyTouch>0.90</AccuracyTouch>
+			<AccuracyShort>0.65</AccuracyShort>
+			<AccuracyMedium>0.50</AccuracyMedium>
+			<AccuracyLong>0.15</AccuracyLong>
+			<RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
 		</statBases>
 		<equippedAngleOffset>45</equippedAngleOffset>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>AC_Bullet_MACRifle</defaultProjectile>
-				<warmupTime>1.6</warmupTime>
-				<range>29.9</range>
-				<soundCast>Shot_ChargeRifle</soundCast>
+				<defaultProjectile>AC_Bullet_GaussShockPDW</defaultProjectile>
+				<warmupTime>0.7</warmupTime>
+				<range>21.9</range>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<burstShotCount>4</burstShotCount>
+				<soundCast>VWE_Shot_GaussRifle</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
-				<muzzleFlashScale>12</muzzleFlashScale>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetPawns>true</canTargetPawns>
+					<canTargetBuildings>true</canTargetBuildings>
+				</targetParams>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>AC_Bullet_GaussShockPDW</defName>
+		<label>gauss shock PDW sabot</label>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>9</damageAmountBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+			<stoppingPower>0.7</stoppingPower>
+			<speed>250</speed>
+		</projectile>
+		<thingClass>VFECore.GaussProjectile</thingClass>
+		<graphicData>
+			<texPath>Projectiles/Proj_CoilgunFadeIn</texPath>
+			<texPathFadeOut>Projectiles/Proj_CoilgunFadeOut</texPathFadeOut>
+		</graphicData>
+		<reachMaxRangeAlways>true</reachMaxRangeAlways>
+		<minDistanceToAffect>0.9</minDistanceToAffect>
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<widthScaleFactor>0.10</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0,0,-1)</startingPositionOffset>
+		<totalSizeScale>0.8</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>2</finalTickFrameRate>
+		<tickDamageRate>5</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<stopWhenHit>false</stopWhenHit>
+		<stopWhenHitAt>
+			<li>MineableSteel</li>
+			<li>CollapsedRocks</li>
+			<li>MineableSilver</li>
+			<li>MineableGold</li>
+			<li>MineableUranium</li>
+			<li>MineablePlasteel</li>
+			<li>MineableJade</li>
+			<li>MineableComponentsIndustrial</li>
+			<li>RaisedRocks</li>
+			<li>Sandstone</li>
+			<li>SmoothedSandstone</li>
+			<li>Granite</li>
+			<li>SmoothedGranite</li>
+			<li>Limestone</li>
+			<li>SmoothedLimestone</li>
+			<li>Slate</li>
+			<li>SmoothedSlate</li>
+			<li>Marble</li>
+			<li>SmoothedMarble</li>
+		</stopWhenHitAt>
+	</VFECore.ExpandableProjectileDef>
+
+	<ThingDef ParentName="BaseGunWithQuality">
+		<defName>AC_Gun_MACRifle</defName>
+		<label>gauss precision rifle</label>
+		<description>A rare spacer-tech gauss sniper rifle. It fires in slough at extreme speed at its target, being able to pierce through multiple walls and heavily armoured targets.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/GaussRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>VWE_Interact_GaussRifle</soundInteract>
+		<techLevel>Spacer</techLevel>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+			<li>RewardStandardQualitySuper</li>
+		</thingSetMakerTags>
+		<weaponTags>
+			<li>AC_Gun</li>
+			<li>SpacerGun</li>
+			<li>Coilgun</li>
+		</weaponTags>
+		<statBases>
+			<Mass>7.5</Mass>
+			<MarketValue>890</MarketValue>
+			<AccuracyTouch>0.55</AccuracyTouch>
+			<AccuracyShort>0.68</AccuracyShort>
+			<AccuracyMedium>0.75</AccuracyMedium>
+			<AccuracyLong>0.68</AccuracyLong>
+			<RangedWeapon_Cooldown>2.25</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>45</equippedAngleOffset>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>AC_Bullet_GaussPrecisionRifle</defaultProjectile>
+				<warmupTime>2.3</warmupTime>
+				<range>48.9</range>
+				<soundCast>VWE_Shot_GaussRifle</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetPawns>true</canTargetPawns>
+					<canTargetBuildings>true</canTargetBuildings>
+				</targetParams>
 			</li>
 		</verbs>
 		<tools>
@@ -393,20 +481,55 @@
 		</tools>
 	</ThingDef>
 
-	<ThingDef ParentName="BaseBullet">
-		<defName>AC_Bullet_MACRifle</defName>
-		<label>MAC shot</label>
-		<graphicData>
-			<texPath>Things/Projectile/Charge_Small</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>AC_Bullet_GaussPrecisionRifle</defName>
+		<label>gauss precision rifle sabot</label>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>12</damageAmountBase>
-			<armorPenetrationBase>0.25</armorPenetrationBase>
-			<speed>70</speed>
+			<damageAmountBase>35</damageAmountBase>
+			<armorPenetrationBase>0.90</armorPenetrationBase>
 			<stoppingPower>3</stoppingPower>
+			<speed>350</speed>
 		</projectile>
-	</ThingDef>
+		<thingClass>VFECore.GaussProjectile</thingClass>
+		<graphicData>
+			<texPath>Projectiles/Proj_CoilgunFadeIn</texPath>
+			<texPathFadeOut>Projectiles/Proj_CoilgunFadeOut</texPathFadeOut>
+		</graphicData>
+		<reachMaxRangeAlways>true</reachMaxRangeAlways>
+		<minDistanceToAffect>10</minDistanceToAffect>
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>100</lifeTimeDuration>
+		<widthScaleFactor>0.10</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0,0,-1)</startingPositionOffset>
+		<totalSizeScale>0.8</totalSizeScale>
+		<tickFrameRate>6</tickFrameRate>
+		<finalTickFrameRate>6</finalTickFrameRate>
+		<tickDamageRate>25</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<stopWhenHit>false</stopWhenHit>
+		<stopWhenHitAt>
+			<li>MineableSteel</li>
+			<li>CollapsedRocks</li>
+			<li>MineableSilver</li>
+			<li>MineableGold</li>
+			<li>MineableUranium</li>
+			<li>MineablePlasteel</li>
+			<li>MineableJade</li>
+			<li>MineableComponentsIndustrial</li>
+			<li>RaisedRocks</li>
+			<li>Sandstone</li>
+			<li>SmoothedSandstone</li>
+			<li>Granite</li>
+			<li>SmoothedGranite</li>
+			<li>Limestone</li>
+			<li>SmoothedLimestone</li>
+			<li>Slate</li>
+			<li>SmoothedSlate</li>
+			<li>Marble</li>
+			<li>SmoothedMarble</li>
+		</stopWhenHitAt>
+	</VFECore.ExpandableProjectileDef>
 
 </Defs>

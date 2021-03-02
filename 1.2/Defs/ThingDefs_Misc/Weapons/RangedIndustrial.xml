@@ -411,7 +411,7 @@
 		<label>gauss precision rifle</label>
 		<description>A rare spacer-tech gauss sniper rifle. It fires in slough at extreme speed at its target, being able to pierce through multiple walls and heavily armoured targets.</description>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/GaussRifle</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/RangedGaussRifle</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>VWE_Interact_GaussRifle</soundInteract>
